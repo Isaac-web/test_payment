@@ -26,7 +26,11 @@ app.post("/pay", async (req, res) => {
 
 
 app.post("/paystack_webhook", (req, res) => {
-    console.log(req)
+    const { event, data } = req.body;
+
+    console.log("Process order...")
+    console.log(event)
+    console.log(data)
 
     res.send("Done")
 })
